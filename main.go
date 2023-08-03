@@ -20,9 +20,13 @@ func main() {
 	}
 
 	log.Println("Starting server :8080")
-	if err := s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-		log.Fatal("Server startup failed")
-	}
+	go func() {
+		if err := s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+			log.Fatal("Server startup failed")
+		}
+	}()
+
+	time.Sleep(10 * time.Second)
 }
 
 func hello(w http.ResponseWriter, req *http.Request) {
