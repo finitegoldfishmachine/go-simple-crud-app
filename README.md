@@ -1,4 +1,4 @@
 # go-simple-crud-app
-This is just a simple app that exercises CRUD app making skills
+A simple app to learn more about Go
 
 Based on [this guide](https://learning-cloud-native-go.github.io/)
